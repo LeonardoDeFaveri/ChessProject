@@ -36,6 +36,23 @@ The fields are:
  * FEN string that represent the initial game configuration.
  */
 char const STD_FEN[] = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1\0";
+/**
+ * Standard Algebraic Notation characters for pieces.
+ */
+char const SAN_CHARACTER[] = "rnbqkpRNBQKP\0";
+/**
+ * Characters for castling options.
+ */
+char const CASLTING_OPTIONS_CHARACTERS[] = "KQkq\0";
+/**
+ * Letters used to identify the columns. Starting from the left of
+ * the white player.
+ */
+char const FILE_LETTERS[] = "abcdefgh\0";
+/**
+ * Numbers used to identify the rows. Starting from the white side.
+ */
+char const RANK_NUMBERS[] = "12345678\0"; 
 
 /**
  * Structure that hold the six components of a FEN string.
@@ -62,9 +79,9 @@ bool check_fen_validity(const char *fen_string);
  * Evaluates a fen string and return the associated game board.
  * 
  * @param fen_string position of the pieces according to the fen notation.
- * @return game board.
+ * @return reference to a Board object if the fen string is valid, otherwise NULL.
  */
-struct Board evaluate_fen(const char *fen_string);
+struct Board *evaluate_fen(const char *fen_string);
 
 /**
  * Generates a fen string from a game board.

@@ -5,12 +5,19 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-    Board board;
+    Board *board;
 
     initialize(board);
-    char *string = get_ascii(board);
-    cout << string << endl;
-    delete[] string;
+    if (board == NULL)
+    {
+        cout << "FEN string isn't valid" << endl;
+    }
+    else
+    {
+        char *string = get_ascii(board);
+        cout << string;
+        delete[] string;
+    }
 
     return 0;
 }

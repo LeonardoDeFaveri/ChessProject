@@ -1,2 +1,2 @@
 #g++ -Wextra main.cpp board_and_pieces/pieces.cpp board_and_pieces/board.cpp fen_manipulation/fen_manipulation.cpp -o app.app
-g++ -Wextra main.cpp ./board_and_pieces/*.cpp ./fen_manipulation/*.cpp -o chess-ai.app $1
+g++ -Wall main.cpp ./board_and_pieces/*.cpp ./fen_manipulation/*.cpp -o chess-ai.app $1

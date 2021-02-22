@@ -36,7 +36,7 @@ extern char const STD_FEN[];
  * @param fen_string [OPTIONAL] position of the pieces according to the fen notation.
  *      If not provided standard positiong is intended.
  */
-void initialize(Board &board, const char *fen_string = STD_FEN);
+void initialize(Board *&board, const char *fen_string = STD_FEN);
 
 /**
  * Gets the ascii representation of the game board.
@@ -44,6 +44,6 @@ void initialize(Board &board, const char *fen_string = STD_FEN);
  * @param board game board.
  * @return ascii string. 
  */
-char *get_ascii(const Board &board);
+char *get_ascii(const Board *board);
 
 #endif
