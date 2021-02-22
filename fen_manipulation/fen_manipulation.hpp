@@ -35,7 +35,20 @@ The fields are:
 /**
  * FEN string that represent the initial game configuration.
  */
-char const STD_FEN[] = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1\0"; 
+char const STD_FEN[] = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1\0";
+
+/**
+ * Structure that hold the six components of a FEN string.
+ */
+struct FEN_string
+{
+    char *pieces;
+    char next_player;
+    char *castling_options;
+    char *enpassant;
+    char *halfmove_clock;
+    char *fullmve_clock;
+};
 
 /**
  * Checks the correct composition of a fen string.
@@ -43,7 +56,7 @@ char const STD_FEN[] = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
  * @param fen_string fen string to check.
  * @return true if the string is correct, otherwise false.
  */
-bool check_fen_validity(const char * fen_string);
+bool check_fen_validity(const char *fen_string);
 
 /**
  * Evaluates a fen string and return the associated game board.
@@ -51,7 +64,7 @@ bool check_fen_validity(const char * fen_string);
  * @param fen_string position of the pieces according to the fen notation.
  * @return game board.
  */
-struct Board evaluate_fen(const char * fen_string);
+struct Board evaluate_fen(const char *fen_string);
 
 /**
  * Generates a fen string from a game board.
@@ -59,6 +72,6 @@ struct Board evaluate_fen(const char * fen_string);
  * @param board game board for which generate fen representation.
  * @return fen string.
  */
-char * generate_fen(const struct Board &board);
+char *generate_fen(const struct Board &board);
 
 #endif

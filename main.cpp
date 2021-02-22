@@ -3,11 +3,12 @@
 
 using namespace std;
 
-int main(int argc, char ** argv) {
+int main(int argc, char **argv)
+{
     Board board;
 
     initialize(board);
-    char * string = get_ascii(board);
+    char *string = get_ascii(board);
     cout << string << endl;
     delete[] string;
 
