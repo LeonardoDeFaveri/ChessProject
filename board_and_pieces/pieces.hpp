@@ -4,7 +4,8 @@
 /**
  * Pieces definitions constants.
  */
-struct Pieces {
+struct Pieces
+{
     static const int PAWN = 1;
     static const int KNIGHT = 2;
     static const int BISHOP = 3;

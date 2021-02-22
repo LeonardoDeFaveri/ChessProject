@@ -1,9 +1,11 @@
 #include "pieces.hpp"
 
-int get_value_from_SAN(char san_value) {
+int get_value_from_SAN(char san_value)
+{
     int value;
 
-    switch (san_value) {
+    switch (san_value)
+    {
     // Black pieces
     case 'r':
         value = Pieces::BLACK | Pieces::ROCK;
@@ -58,10 +60,12 @@ int get_value_from_SAN(char san_value) {
     return value;
 }
 
-char get_SAN_from_value(int value) {
+char get_SAN_from_value(int value)
+{
     char character;
 
-    switch (value) {
+    switch (value)
+    {
     // Black pieces
     case Pieces::BLACK | Pieces::PAWN:
         character = 'p';
